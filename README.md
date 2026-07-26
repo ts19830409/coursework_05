@@ -8,3 +8,4 @@
 2. Запустите контейнеры:
    ```bash
    docker compose up --build -d
+
