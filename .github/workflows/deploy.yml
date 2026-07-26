@@ -59,6 +59,8 @@ jobs:
           script: |
             cd /home/${{ secrets.SSH_USER }}/coursework_05
             git pull origin main
+            mkdir -p static
+            echo "STATIC_ROOT = '/app/static/'" >> config/settings.py
             docker compose down
             docker compose up --build -d
             docker compose exec web python manage.py migrate
